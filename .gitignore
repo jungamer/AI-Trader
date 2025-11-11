@@ -78,6 +78,7 @@ test.py
 delete.py
 refresh_data.sh
 agent_tools/tool_consolidated.py
+prompts/agent_prompt_astock.py
 
 # Config files (optional - uncomment if needed)
 configs/day_config.json
