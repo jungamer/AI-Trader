@@ -29,6 +29,7 @@ class MCPServiceManager:
             "trade": int(os.getenv("TRADE_HTTP_PORT", "8002")),
             "price": int(os.getenv("GETPRICE_HTTP_PORT", "8003")),
             "crypto": int(os.getenv("CRYPTO_HTTP_PORT", "8005")),
+            "RealTimeStock": int(os.getenv("REAL_TIME_STOCK_HTTP_PORT", "8090")),
         }
 
         # Service configurations
@@ -37,9 +38,10 @@ class MCPServiceManager:
             "math": {"script": os.path.join(mcp_server_dir, "tool_math.py"), "name": "Math", "port": self.ports["math"]},
             # "search": {"script": "tool_jina_search.py", "name": "Search", "port": self.ports["search"]},
             "search": {"script": os.path.join(mcp_server_dir, "tool_alphavantage_news.py"), "name": "Search", "port": self.ports["search"]},  
-            "trade": {"script": os.path.join(mcp_server_dir, "tool_trade.py"), "name": "TradeTools", "port": self.ports["trade"]},
-            "price": {"script": os.path.join(mcp_server_dir, "tool_get_price_local.py"), "name": "LocalPrices", "port": self.ports["price"]},
-            "crypto": {"script": os.path.join(mcp_server_dir, "tool_crypto_trade.py"), "name": "CryptoTradeTools", "port": self.ports["crypto"]},
+            "RealTimeStock": {"script": os.path.join(mcp_server_dir, "tool_consolidated.py"), "name": "RealTimeStock", "port": self.ports["RealTimeStock"]},  
+            # "trade": {"script": os.path.join(mcp_server_dir, "tool_trade.py"), "name": "TradeTools", "port": self.ports["trade"]},
+            # "price": {"script": os.path.join(mcp_server_dir, "tool_get_price_local.py"), "name": "LocalPrices", "port": self.ports["price"]},
+            # "crypto": {"script": os.path.join(mcp_server_dir, "tool_crypto_trade.py"), "name": "CryptoTradeTools", "port": self.ports["crypto"]},
         }
 
         # Create logs directory
