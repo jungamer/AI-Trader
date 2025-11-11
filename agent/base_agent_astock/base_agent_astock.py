@@ -254,6 +254,10 @@ class BaseAgentAStock:
                 "transport": "streamable_http",
                 "url": f"http://localhost:{os.getenv('TRADE_HTTP_PORT', '8002')}/mcp",
             },
+            "RealTimeStockTools": {
+                "transport": "streamable_http",
+                "url": f"http://localhost:{os.getenv('REAL_TIME_STOCK_HTTP_PORT', '8090')}/mcp",
+            },
         }
 
     async def initialize(self) -> None:
