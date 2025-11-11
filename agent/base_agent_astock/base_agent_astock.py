@@ -242,18 +242,18 @@ class BaseAgentAStock:
                 "transport": "streamable_http",
                 "url": f"http://localhost:{os.getenv('MATH_HTTP_PORT', '8000')}/mcp",
             },
-            "stock_local": {
-                "transport": "streamable_http",
-                "url": f"http://localhost:{os.getenv('GETPRICE_HTTP_PORT', '8003')}/mcp",
-            },
+#            "stock_local": {
+#                "transport": "streamable_http",
+#                "url": f"http://localhost:{os.getenv('GETPRICE_HTTP_PORT', '8003')}/mcp",
+#            },
             "search": {
                 "transport": "streamable_http",
                 "url": f"http://localhost:{os.getenv('SEARCH_HTTP_PORT', '8004')}/mcp",
             },
-            "trade": {
-                "transport": "streamable_http",
-                "url": f"http://localhost:{os.getenv('TRADE_HTTP_PORT', '8002')}/mcp",
-            },
+#            "trade": {
+#                "transport": "streamable_http",
+#                "url": f"http://localhost:{os.getenv('TRADE_HTTP_PORT', '8002')}/mcp",
+#            },
             "RealTimeStockTools": {
                 "transport": "streamable_http",
                 "url": f"http://localhost:{os.getenv('REAL_TIME_STOCK_HTTP_PORT', '8090')}/mcp",
