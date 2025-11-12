@@ -94,6 +94,10 @@ data/agent_data/*test*/
 data/merged_daily.jsonl
 data/merged_hour.jsonl
 
+# Agent data files (trading positions and logs)
+data/agent_data_astock/
+data/agent_data_crypto/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
