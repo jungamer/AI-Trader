@@ -8,25 +8,6 @@ echo.
 echo 🚀 Launching AI Trader Environment...
 echo.
 
-REM 检查Python是否可用
-python --version >nul 2>&1
-if errorlevel 1 (
-    echo ❌ Python is not installed or not in PATH
-    echo Please install Python and add it to your PATH
-    pause
-    exit /b 1
-)
-
-echo 📊 Now getting and merging price data...
-cd data
-python merge_jsonl.py
-if errorlevel 1 (
-    echo ❌ Failed to merge JSONL data
-    pause
-    exit /b 1
-)
-cd ..
-
 echo 🔧 Now starting MCP services...
 cd agent_tools
 start "MCP Services" python start_mcp_services.py
@@ -37,7 +18,7 @@ echo Waiting for MCP services to start...
 timeout /t 5 /nobreak >nul
 
 echo 🤖 Now starting the main trading agent...
-python main.py configs\default_config.json
+python main.py configs/astock_config.json  # 运行A股配置
 if errorlevel 1 (
     echo ❌ Trading agent stopped with error
     pause
@@ -46,17 +27,6 @@ if errorlevel 1 (
 
 echo ✅ AI-Trader stopped
 
-echo 🔄 Starting web server...
-cd docs
-start "Web Server" python -m http.server 8888
-cd ..
-
-echo ✅ Web server started
-echo.
-echo 🎉 AI-Trader environment is ready!
-echo - Trading agent: Completed
-echo - MCP services: Running in background
-echo - Web server: Running on http://localhost:8888
 echo.
 echo Press any key to exit...
 pause >nul

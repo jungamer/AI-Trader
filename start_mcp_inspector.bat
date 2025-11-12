@@ -1,0 +1,6 @@
+@echo off
+echo Starting MCP Inspector...
+
+npx @modelcontextprotocol/inspector
+
+pause
