@@ -535,7 +535,9 @@ class BaseAgentAStock:
         print(f"📅 Running A-shares date range: {init_date} to {end_date}")
 
         # Get trading date list
-        trading_dates = self.get_trading_dates(init_date, end_date)
+        from datetime import datetime
+        today_date = datetime.now().strftime("%Y-%m-%d")
+        trading_dates = [today_date] * 10  # 将今天的日期写入10遍
 
         if not trading_dates:
             print(f"ℹ️ No trading days to process")
